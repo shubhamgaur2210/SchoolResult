@@ -1,0 +1,39 @@
+﻿.bg-img {
+    background-image: url("../../Images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%
+}
+
+.bg-mask {
+    background: rgba(0,0,0,0.8);
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+nav ul li a:link {
+    color: white;
+}
+
+    nav ul li a:link:hover {
+        color: white;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+
+.active {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.textbox {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}

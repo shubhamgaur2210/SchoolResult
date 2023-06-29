@@ -1,0 +1,53 @@
+﻿@model SchoolResultProject2.Models.ViewModel.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="row m-4 p-4">
+    <div class="col-sm-3 mx-auto p-5">
+        <div class="text-white">
+            <h2 class="mb-5 text-decoration-underline">
+                LOGIN
+            </h2>
+        </div>
+
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="row">
+                <div class="d-inline-flex my-2 py-2 text-white border-bottom border-2 overflow-hidden">
+                    <i class="bi bi-person-fill img-logo me-2"></i>
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "textbox", @placeholder = "Username" } })
+                </div>
+            </div>
+
+            <div class="row">
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="row">
+                <div class="d-inline-flex my-2 py-2 text-white border-bottom border-2 overflow-hidden">
+                    <i class="bi bi-lock-fill img-logo me-2"></i>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "textbox", @type = "password", @placeholder = "Password" } })
+                </div>
+            </div>
+
+            <div class="row">
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <br />
+
+            <div class="row">
+                <button class="btn btn-outline-light rounded-0" type="submit">Sign In</button>
+            </div>
+
+        }
+    </div>
+</div>
+
+@System.Web.Optimization.Scripts.Render("~/Scripts/jqueryval")
+

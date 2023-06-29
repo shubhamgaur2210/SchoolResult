@@ -1,0 +1,71 @@
+﻿@using System.Web.Optimization
+@using SchoolResultProject2.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/bootstrap")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    @Scripts.Render("~/Scripts/bootstrap")
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/student")
+    @Scripts.Render("~/Scripts/admin")
+</head>
+<body>
+    <div class="bg-img min-vh-100">
+        <div class="bg-mask min-vh-100">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-sm navbar-dark p-3">
+                    <a class="navbar-brand px-5" href="#">
+                        <img src="~/Images/logo.png" height=50 />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
+                            aria-controls="collapsibleNavBar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav px-5 py-2 container-fluid" id="navbar">
+                            @if (Session["User"] != null)
+                            {
+                                if (((User)Session["User"]).Role == "Student")
+                                {
+                                    <li class="nav-item px-5 my-auto border-start border-end border-2">
+                                        <a class="nav-link" href="#" id="ViewResult">View Result</a>
+                                    </li>
+                                }
+                                if (((User)Session["User"]).Role == "Admin")
+                                {
+                                    <li class="nav-item px-5 my-auto border-start border-end border-2">
+                                        <a class="nav-link" href="#" id="ViewResults" onclick="viewResults()">View Results</a>
+                                    </li>
+                                    <li class="nav-item px-5 my-auto border-start border-end border-2">
+                                        <a class="nav-link" href="#" id="ManageStudents" onclick="manageStudents()">Manage Student</a>
+                                    </li>
+                                    <li class="nav-item px-5 my-auto border-start border-end border-2">
+                                        <a class="nav-link" href="#" id="ManageAdmins" onclick="manageAdmins()">Manage Admin</a>
+                                    </li>
+                                }
+                                <li class="nav-item px-5 my-auto ms-auto border-start border-end border-2">
+                                    <a class="nav-link" href="/Account/Logout">Logout</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </nav>
+                @Html.Partial("Messages");
+                @if (ViewBag.Message != null && ViewBag.Message != "")
+                {
+                    <div class="m-5 p-5 d-flex  justify-content-center">
+                        <h1 class="text-white">@ViewBag.Message</h1>
+                    </div>
+                }
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

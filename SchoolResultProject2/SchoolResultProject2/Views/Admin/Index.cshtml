@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+<div class="container py-5 text-white" id="Admin">
+    <div class="row m-3">
+        <div class="col-sm-4 px-4 mx-auto">
+            <div class="text-white">
+                <h2 class="mb-5 text-center text-decoration-underline">
+                    Create New Student
+                </h2>
+            </div>
+            <form class="needs-validation" novalidate>
+
+                <div class="row">
+                    <h5 class="text-white text-decoration-underline">Student Details</h5>
+                </div>
+                <div class="row my-2 py-2">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="txtName" class="text-white fw-bold">Name</label>
+                            </div>
+                            <div class="col-6 border-bottom overflow-hidden">
+                                <input type="text" id="txtName" class="textbox" name="Name" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Alphabets Only!
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-6 ms-1">
+                                <lable for="txtRollNo" class="text-white fw-bold">Roll No</lable>
+                            </div>
+                            <div class="col-4 border-bottom overflow-hidden">
+                                <input type="number" id="txtRollNo" class="textbox" name="RollNo" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Number Only!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-2 py-2">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="txtUsername" class="text-white fw-bold">Username</label>
+                            </div>
+                            <div class="col-8 border-bottom overflow-hidden">
+                                <input type="text" id="txtUsername" class="textbox" name="Username" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Invalid Username!
+                            <small class="username-exist text-danger"></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-2 py-2">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="txtPassword" class="text-white fw-bold">Password</label>
+                            </div>
+                            <div class="col-8 border-bottom overflow-hidden">
+                                <input type="password" id="txtPassword" class="textbox" name="Password" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Invalid Password!
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                    <h5 class="text-white text-decoration-underline">Student Marks</h5>
+                </div>
+
+                <div class="row my-2 py-2">
+                    <div class="col-3 mx-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <lable for="txtEnglish" class="text-white fw-bold">English</lable>
+                            </div>
+                            <div class="col-4 border-bottom overflow-hidden">
+                                <input type="number" id="txtEnglish" class="textbox" name="English" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Invalid Marks!
+                        </div>
+                    </div>
+                    <div class="col-3 mx-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <lable for="txtHindi" class="text-white fw-bold">Hindi</lable>
+                            </div>
+                            <div class="col-4 border-bottom overflow-hidden">
+                                <input type="number" id="txtHindi" class="textbox" name="Hindi" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Invalid Marks!
+                        </div>
+                    </div>
+                    <div class="col-3 mx-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <lable for="txtScience" class="text-white fw-bold">Science</lable>
+                            </div>
+                            <div class="col-4 border-bottom overflow-hidden">
+                                <input type="number" id="txtScience" class="textbox" name="Science" />
+                            </div>
+                        </div>
+                        <div class="row invalid-feedback">
+                            Invalid Marks!
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="row justify-content-evenly">
+                    <button class="btn btn-outline-light rounded-0 col-5" type="submit">Create</button>
+                    <a class="btn btn-outline-light rounded-0 col-5" href="/Admin/Students">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
